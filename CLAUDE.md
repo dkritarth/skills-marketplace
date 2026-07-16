@@ -41,7 +41,18 @@ skills-marketplace/
 
 ## Commands
 
-No build/test tooling yet — skills are markdown + prompts, validated by
-running them against real artifacts per `AGENTS.md`. Add commands here once
-any skill grows a verification script (e.g. MATH's planned SymPy
-round-trip).
+Most of each skill is markdown + prompts, validated by running them against
+real artifacts per `AGENTS.md`. Two skills now also carry real scripts:
+
+- `writing`: `skills/writing/scripts/{init_journal,gather_context,append_entry}.sh`
+  — dependency-free bash (needs `git`). No install step.
+- `latex`: `skills/latex/scripts/{parse_log,bib_lint}.py` — Python stdlib
+  only, no install step.
+- `math`: `skills/math/scripts/sympy_verify.py` — requires `sympy`
+  (`pip install sympy`; a venv is recommended). This is the script behind
+  MATH's ship condition (see PLAN.md and `skills/math/SKILL.md`); it exits
+  with a clear error if `sympy` isn't installed rather than silently
+  no-op'ing.
+
+No shared build system across skills yet — each script is invoked directly
+via `Bash` from within the skill's instructions.
