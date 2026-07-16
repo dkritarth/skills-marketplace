@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skills-marketplace",
+  "description": "Personal marketplace of fine-tuned skills for paper writing, LaTeX, and verified math proofs.",
+  "owner": {
+    "name": "Kritarth Dandapat",
+    "email": "dkritarth@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "writing",
+      "description": "Paper-writing skill that tracks a draft's modification history across sessions via a per-draft journal file backed by git, and infers the draft's forward trajectory (not just past diffs). The flagship skill in this marketplace.",
+      "source": "./skills/writing",
+      "category": "writing"
+    },
+    {
+      "name": "latex",
+      "description": "Narrow-scoped LaTeX skill: venue templates, compile-error log triage (points at the actual offending file/line), and bib hygiene (duplicate keys, missing fields).",
+      "source": "./skills/latex",
+      "category": "writing"
+    },
+    {
+      "name": "math",
+      "description": "Proof structure enforcement (claim/assumptions/proof/where-used) plus a real SymPy verification round-trip for symbolic and numeric sub-claims, with Lean-formalization candidates flagged (not forced).",
+      "source": "./skills/math",
+      "category": "math"
+    }
+  ]
+}
