@@ -1,0 +1,40 @@
+% Placeholder template — generic article skeleton, not tied to a venue.
+%
+% This is intentionally NOT a venue-specific template yet. PLAN.md Phase 2
+% calls for testing this skill against a real venue submission before
+% considering it done; until then this generic skeleton is what the LATEX
+% skill offers, and it should say so rather than pretend it's venue-ready.
+% When a real venue template is added (e.g. neurips_2026/, acl_2026/), keep
+% this generic one as the fallback for untargeted drafts.
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+
+\title{Title}
+\author{Author}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Abstract.
+\end{abstract}
+
+\section{Introduction}
+
+\section{Related Work}
+
+\section{Method}
+
+\section{Experiments}
+
+\section{Conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
