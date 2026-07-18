@@ -1,0 +1,6 @@
+[submodule "skills/mattpocock-skills"]
+	path = skills/mattpocock-skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "skills/research-paper-writing-skills"]
+	path = skills/research-paper-writing-skills
+	url = https://github.com/Master-cai/Research-Paper-Writing-Skills.git

@@ -24,6 +24,175 @@
       "description": "Proof structure enforcement (claim/assumptions/proof/where-used) plus a real SymPy verification round-trip for symbolic and numeric sub-claims, with Lean-formalization candidates flagged (not forced).",
       "source": "./skills/math",
       "category": "math"
+    },
+    {
+      "name": "academic-humanizer",
+      "description": "Imported skill: academic-humanizer.",
+      "source": "./skills/academic-humanizer",
+      "category": "imported"
+    },
+    {
+      "name": "agents-sdk",
+      "description": "Imported skill: agents-sdk.",
+      "source": "./skills/agents-sdk",
+      "category": "imported"
+    },
+    {
+      "name": "document-skills",
+      "description": "Collection of document processing suite including Excel, Word, PowerPoint, and PDF capabilities",
+      "source": "./skills/anthropics-skills",
+      "strict": false,
+      "skills": [
+        "./skills/xlsx",
+        "./skills/docx",
+        "./skills/pptx",
+        "./skills/pdf"
+      ]
+    },
+    {
+      "name": "example-skills",
+      "description": "Collection of example skills demonstrating various capabilities including skill creation, MCP building, visual design, algorithmic art, internal communications, web testing, artifact building, Slack GIFs, and theme styling",
+      "source": "./skills/anthropics-skills",
+      "strict": false,
+      "skills": [
+        "./skills/algorithmic-art",
+        "./skills/brand-guidelines",
+        "./skills/canvas-design",
+        "./skills/doc-coauthoring",
+        "./skills/frontend-design",
+        "./skills/internal-comms",
+        "./skills/mcp-builder",
+        "./skills/skill-creator",
+        "./skills/slack-gif-creator",
+        "./skills/theme-factory",
+        "./skills/web-artifacts-builder",
+        "./skills/webapp-testing"
+      ]
+    },
+    {
+      "name": "claude-api",
+      "description": "Claude API and SDK documentation skill for building LLM-powered applications",
+      "source": "./skills/anthropics-skills",
+      "strict": false,
+      "skills": [
+        "./skills/claude-api"
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "description": "Imported skill: cloudflare.",
+      "source": "./skills/cloudflare",
+      "category": "imported"
+    },
+    {
+      "name": "cloudflare-email-service",
+      "description": "Imported skill: cloudflare-email-service.",
+      "source": "./skills/cloudflare-email-service",
+      "category": "imported"
+    },
+    {
+      "name": "cloudflare-one",
+      "description": "Imported skill: cloudflare-one.",
+      "source": "./skills/cloudflare-one",
+      "category": "imported"
+    },
+    {
+      "name": "cloudflare-one-migrations",
+      "description": "Imported skill: cloudflare-one-migrations.",
+      "source": "./skills/cloudflare-one-migrations",
+      "category": "imported"
+    },
+    {
+      "name": "durable-objects",
+      "description": "Imported skill: durable-objects.",
+      "source": "./skills/durable-objects",
+      "category": "imported"
+    },
+    {
+      "name": "markitdown-converter",
+      "description": "Imported skill: markitdown-converter.",
+      "source": "./skills/markitdown-converter",
+      "category": "imported"
+    },
+    {
+      "name": "mattpocock-skills",
+      "skills": [
+        "./skills/deprecated/design-an-interface",
+        "./skills/deprecated/qa",
+        "./skills/deprecated/request-refactor-plan",
+        "./skills/deprecated/ubiquitous-language",
+        "./skills/engineering/ask-matt",
+        "./skills/engineering/code-review",
+        "./skills/engineering/codebase-design",
+        "./skills/engineering/diagnosing-bugs",
+        "./skills/engineering/domain-modeling",
+        "./skills/engineering/grill-with-docs",
+        "./skills/engineering/implement",
+        "./skills/engineering/improve-codebase-architecture",
+        "./skills/engineering/prototype",
+        "./skills/engineering/research",
+        "./skills/engineering/resolving-merge-conflicts",
+        "./skills/engineering/setup-matt-pocock-skills",
+        "./skills/engineering/tdd",
+        "./skills/engineering/to-issues",
+        "./skills/engineering/to-prd",
+        "./skills/engineering/triage",
+        "./skills/in-progress/claude-handoff",
+        "./skills/in-progress/loop-me",
+        "./skills/in-progress/wayfinder",
+        "./skills/in-progress/wizard",
+        "./skills/in-progress/writing-beats",
+        "./skills/in-progress/writing-fragments",
+        "./skills/in-progress/writing-shape",
+        "./skills/misc/git-guardrails-claude-code",
+        "./skills/misc/migrate-to-shoehorn",
+        "./skills/misc/scaffold-exercises",
+        "./skills/misc/setup-pre-commit",
+        "./skills/personal/edit-article",
+        "./skills/personal/obsidian-vault",
+        "./skills/productivity/grill-me",
+        "./skills/productivity/grilling",
+        "./skills/productivity/handoff",
+        "./skills/productivity/teach",
+        "./skills/productivity/writing-great-skills"
+      ],
+      "source": "./skills/mattpocock-skills"
+    },
+    {
+      "name": "research-paper-writing",
+      "description": "Imported skill: research-paper-writing.",
+      "source": "./skills/research-paper-writing-skills/research-paper-writing",
+      "category": "imported"
+    },
+    {
+      "name": "sandbox-sdk",
+      "description": "Imported skill: sandbox-sdk.",
+      "source": "./skills/sandbox-sdk",
+      "category": "imported"
+    },
+    {
+      "name": "turnstile-spin",
+      "description": "Imported skill: turnstile-spin.",
+      "source": "./skills/turnstile-spin",
+      "category": "imported"
+    },
+    {
+      "name": "web-perf",
+      "description": "Imported skill: web-perf.",
+      "source": "./skills/web-perf",
+      "category": "imported"
+    },
+    {
+      "name": "workers-best-practices",
+      "description": "Imported skill: workers-best-practices.",
+      "source": "./skills/workers-best-practices",
+      "category": "imported"
+    },
+    {
+      "name": "wrangler",
+      "description": "Imported skill: wrangler.",
+      "source": "./skills/wrangler",
+      "category": "imported"
     }
   ]
 }
