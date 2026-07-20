@@ -26,6 +26,24 @@
       "category": "math"
     },
     {
+      "name": "orchestrate",
+      "description": "Model-routing orchestration: classifies each unit of work into one of five provider-neutral difficulty tiers and spawns subagents on the cheapest model that handles that tier reliably. Ships Anthropic (Fable orchestrates, Opus deep-reasons, Sonnet implements, Haiku executes mechanical/bulk work) and OpenAI Codex (gpt-5.1-codex-max/-codex/-codex-mini with reasoning-effort settings) mappings, cross-provider routing via the codex/claude CLIs, and explicit escalation/demotion rules.",
+      "source": "./skills/orchestrate",
+      "category": "agent-infra"
+    },
+    {
+      "name": "repo-wiki",
+      "description": "Generates and maintains a GitHub wiki from a repo's CLAUDE.md/README/AGENTS.md/docs plus a structure scan, stamps every page with its source commit for staleness detection, and installs a first-read pointer in both CLAUDE.md (Claude Code) and AGENTS.md (Codex and other agents) so exploring agents start from the wiki instead of a cold tree walk.",
+      "source": "./skills/repo-wiki",
+      "category": "agent-infra"
+    },
+    {
+      "name": "llm-harness",
+      "description": "Builds an evaluation harness around any LLM-dependent system: infers intent from its prompts/code, derives gradeable success criteria, generates golden + adversarial + holdout cases, wires the cheapest adequate grader, and reports a baseline accuracy number to iterate against.",
+      "source": "./skills/llm-harness",
+      "category": "agent-infra"
+    },
+    {
       "name": "academic-humanizer",
       "description": "Imported skill: academic-humanizer.",
       "source": "./skills/academic-humanizer",

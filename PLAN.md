@@ -164,6 +164,72 @@ every invocation, backed by git for the raw diffs.**
   by the phase-2 milestone, fold structure-only guidance into LATEX as a
   proof-environment template instead.
 
+## Second track — agent-infrastructure skills (added 2026-07-20)
+
+Beyond the writing/proof track above, this marketplace also carries skills
+about *how I run Claude Code itself*. Three are scoped:
+
+### ORCHESTRATE (agent-infra, build first in this track)
+- **Concept:** an explicit model-routing decision procedure. Five
+  provider-neutral difficulty tiers — Tier 0 orchestration (main-loop model
+  only, never a subagent), Tier 1 deep reasoning, Tier 2 standard
+  implementation, Tier 3 mechanical execution, Tier 4 bulk
+  retrieval/classification — with a per-provider mapping table: Anthropic
+  (Fable / Opus / Sonnet / Haiku / Haiku) and OpenAI Codex
+  (gpt-5.1-codex-max xhigh / -max high / gpt-5.1-codex medium /
+  gpt-5.1-codex-mini low ×2). Each delegable unit is classified, then
+  spawned via the current harness's mechanism (`Agent` model override in
+  Claude Code; `codex exec -m … -c model_reasoning_effort=…` in Codex;
+  cross-provider by shelling out to the other CLI). Escalation re-runs a
+  failed unit one tier up with the failed attempt as context; demotion
+  routes same-shaped units down after trivially-correct results.
+- **Differentiator:** stock `Agent` inherits the session model; `cavecrew`
+  routes by output compression. Neither routes by capability-vs-cost, and
+  neither spans providers.
+- **Stateless** — pure decision procedure, no files written.
+- **Model-ID drift rule:** the mapping table names current model IDs;
+  SKILL.md instructs verifying IDs per session and substituting newer
+  generations at the same relative tier, so the tier semantics outlive any
+  one model family.
+
+### REPO-WIKI (agent-infra)
+- **Concept:** derive a GitHub wiki (`<repo>.wiki.git`) from CLAUDE.md,
+  AGENTS.md, README, docs/, and a structure scan; stamp every generated page
+  with the source commit SHA (staleness detector); install a `## Codebase
+  wiki` first-read pointer in the repo's CLAUDE.md (Claude Code) and
+  AGENTS.md (Codex and other agents) so exploring agents start
+  from the distilled wiki rather than a cold tree walk. Refresh runs diff
+  from the stamped SHA and regenerate only affected pages.
+- **Differentiator:** `/init` produces one CLAUDE.md and stops; nothing keeps
+  a wiki generated-from and consistent-with in-repo docs, and nothing makes
+  it the agent's entry point.
+- **Ship condition:** the first-read pointer must demonstrably shortcut a
+  real exploration session on a real repo of mine; a wiki nobody's agent
+  reads is dead weight.
+
+### LLM-HARNESS (agent-infra)
+- **Concept:** wrap any LLM-dependent system (prompt, pipeline, agent) in an
+  eval harness: infer the system's intent from its prompts/code, confirm it,
+  derive gradeable criteria, build golden + adversarial + holdout cases
+  (30–50 minimum), wire the cheapest adequate grader (exact match →
+  programmatic assertion → reference similarity → LLM-judge last), run a
+  baseline, report per-failure-mode breakdown, iterate against the number.
+  Scaffolds a `harness/` directory in the target project; results record the
+  system-under-test's git SHA so stale baselines are flagged, not silently
+  compared.
+- **Differentiator:** local TDD skills test deterministic code only; nothing
+  turns "here is my prompt" into a trackable accuracy number.
+- **Ship condition:** must produce a baseline on one real LLM system of mine
+  and catch at least one regression or confirmed improvement a vibe-check
+  would have missed.
+
+### Phasing for this track
+Runs parallel to (not blocking) the writing-track phases below/above:
+ORCHESTRATE first (smallest, immediately usable in every session), then
+REPO-WIKI against this repo itself, then LLM-HARNESS against a real system.
+Same rule as the writing track: real-usage validation before promotion from
+`settings.local.json` to committed defaults.
+
 ### Candidate additions (not yet scoped, TBD)
 - **REVIEW** — apply the WRITING journal's "stated direction" concept in
   reverse: given a reviewer's comments on a submitted draft, map each
